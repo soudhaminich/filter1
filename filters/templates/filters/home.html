@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table, td, th {
+            border: 3px solid black;
+          }
+          
+          table {
+            border-collapse: collapse;
+            width: 100%;
+          }
+          th{
+              font-size: 20px;
+          }
+          
+          th,td {
+            height: 40px;
+            text-align: center;
+          }
+    </style>
 </head>
 <body>
     
@@ -24,36 +42,36 @@
             <div class="card card-body">
     
                 <form method="get">
-                    {{myFilter.form}}
-    
-                <button class="btn btn-primary" type="submit">Search</button>
-              </form>
-    
+                    {{ myfilter.form }}
+                    <button type="submit">Search</button>
+                  </form>
             </div>
         </div>
         
     </div>
     <br>
+    <br>
+    <br>
     
     <div class="row">
-        <div class="col-md">
+        <div class="col-md-4">
             <div class="card card-body">
                 <table class="table table-sm">
                     <tr>
-                        <th>title</th>
-                        <th>content</th>
-                        <th>question type</th>
-                        <th>priority</th>
+                        <th>Title     </th>
+                        <th>Content</th>
+                        <th>Question Type</th>
+                        <th>Priority   </th>
                         
                     </tr>
     
                     {% for ticket in tickets %}
     
                     <tr>
-                        <td>{{ticket.title}}</td>
+                        <td>{{ticket.title}}   </td>
                         <td>{{ticket.content}}</td>
-                        <td>{{ticket.question_type}}</td>
-                        <td>{{ticket.ticket_priority}}</td>
+                        <td>{{ticket.question_type}}  </td>
+                        <td>{{ticket.ticket_priority}}   </td>
                         
                     {% endfor %}
     

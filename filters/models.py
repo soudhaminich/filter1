@@ -11,6 +11,7 @@ ticket_choices=(
     ("high","high"),
     ("low","low"),
     ("medium","medium"),
+    ("urgent","urgent"),
 )
 
 class Ticket(models.Model):
