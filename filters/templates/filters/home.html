@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+        <div class="col-md">
+            <div class="card card-body">
+                <h2>Total Tickets : {{ count }}</h2>
+                
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <br>
+    <div class="row">
+        <div class="col">
+            <div class="card card-body">
+    
+                <form method="get">
+                    {{myFilter.form}}
+    
+                <button class="btn btn-primary" type="submit">Search</button>
+              </form>
+    
+            </div>
+        </div>
+        
+    </div>
+    <br>
+    
+    <div class="row">
+        <div class="col-md">
+            <div class="card card-body">
+                <table class="table table-sm">
+                    <tr>
+                        <th>title</th>
+                        <th>content</th>
+                        <th>question type</th>
+                        <th>priority</th>
+                        
+                    </tr>
+    
+                    {% for ticket in tickets %}
+    
+                    <tr>
+                        <td>{{ticket.title}}</td>
+                        <td>{{ticket.content}}</td>
+                        <td>{{ticket.question_type}}</td>
+                        <td>{{ticket.ticket_priority}}</td>
+                        
+                    {% endfor %}
+    
+                </table>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
