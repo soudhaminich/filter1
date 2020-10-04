@@ -1,11 +1,12 @@
 from django.conf.urls import url
 from . import views
+from django.urls import path,include
 
 
 urlpatterns = [
-    url('',views.home,name='home'),
-    # url('',views.TicketListView.as_view(),name='home'),
-    url('ticket_create', views.ticket_create,name='ticket_create') 
+    path('',views.home,name='home'),
+    
+    path("ticket_create", views.ticket_create,name='ticket_create') 
          
          
 ]

@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Add new post</h1>
-<form action="{% url 'ticket_create' %}" method="post">
+<form action="{% url 'ticket_create' %}" method="POST">
     {% csrf_token %}
     {{ form.as_p }}
 <button class="button" type="submit">Create</button>
