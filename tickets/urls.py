@@ -15,13 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-# from filters.views import ticket_create
-from filters import views
+
 
 urlpatterns = [
-    # path('filters/create/', 
-    #      ticket_create, 
-    #      name='ticket_create'),
+   
     path('admin/', admin.site.urls),
     path('',include('filters.urls'))
 ]
