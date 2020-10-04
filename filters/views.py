@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import TicketForm
-from filters.models import Ticket
+from .models import Ticket
 from django.views.generic import ListView
 from .filters import TicketFilter
 
@@ -21,21 +21,23 @@ def home(request):
     
     ticketsdetails = Ticket.objects.all()
     # ts=ticketsdetails.order_by.all()
-    # myfilter=TicketFilter(request.GET,queryset=ts)
-    # tickets=myfilter.qs
+    myfilter=TicketFilter(request.GET,queryset=ticketsdetails)
+    ticketsdetails=myfilter.qs
     # t=Ticket.objects.get(id=pk)
     count=Ticket.objects.all().count()
     
     
     stu = {
     "tickets": ticketsdetails,
-    # "myfilter":myfilter,
+    "myfilter":myfilter,
     "count":count,
     
     }
    
     
     return render(request,"filters/home.html", stu)
+
+
 
     # total_tickets = ticketsdetails.count()
     # 
